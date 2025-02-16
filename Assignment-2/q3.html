@@ -1,0 +1,66 @@
+<!-- Create a form to add TODOs with 3 fields – task, date, and time. Each time a task is
+added it should be displayed on the same HTML page along with the existing tasks.
+Style the TODOs with CSS.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asg2-q3</title>
+</head>
+<body>
+    <h2>TODOs</h2>
+    <form onsubmit="addTask(event)">
+        <input type="text" id="task" placeholder="Task" required>
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="tasks"></ul>
+    <script>
+        function addTask(event) {
+            event.preventDefault();
+            let task = document.querySelector('#task').value;
+            let date = document.querySelector('#date').value;
+            let time = document.querySelector('#time').value;
+            let li = document.createElement('li');
+            li.innerText = `${task} - ${date} - ${time}`;
+            document.querySelector('#tasks').appendChild(li);
+            document.querySelector('#task').value = '';
+            document.querySelector('#date').value = '';
+            document.querySelector('#time').value = '';
+        }
+    </script>
+    <style>
+        input{
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+        button{
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Fetch products from https://fakestoreapi.com/products using axios. In the HTML page
+display the product image, name and price in product card format. Use async/await
+for asynchronous data fetching and try/catch to handle possible errors. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q3</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="products-container"></div>
+    <script>
+        async function fetchProducts() {
+            try {
+                const response = await axios.get('https://fakestoreapi.com/products');
+                const products = response.data;
+                const container = document.getElementById('products-container');
+                products.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('product-card');
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h2>${product.title}</h2>
+                        <p>Category: ${product.category}</p>
+                        <p>Description: ${product.description}</p>
+                        <p>Rating: ${product.rating.rate}</p>
+                        <p>Rating count: ${product.rating.count}</p>
+                        <h4>$${product.price}</h4>
+                    `;
+                    container.appendChild(productCard);
+                });
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }   
+        fetchProducts();
+    </script>
+</body>
+</html>

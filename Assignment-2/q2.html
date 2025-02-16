@@ -1,0 +1,108 @@
+<!-- Create an array of 10 student objects. Each student object has a roll, name, mobile,
+and email. Display all student data in an HTML table. Style the table using CSS. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asg2-q2</title>
+</head>
+<body>
+    <h2>Student Data</h2>
+    <table>
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+        <script>
+            let students = [
+                {
+                    roll: 1,
+                    name: 'Abc',
+                    mobile: 1234567890,
+                    email: 'abc@gmail.com'
+                },
+                {
+                    roll: 2,
+                    name: 'Def',
+                    mobile: 9876543210,
+                    email: 'def@gmail.com'
+                },
+                {
+                    roll: 3,
+                    name: 'Ghi',
+                    mobile: 9087654321,
+                    email: 'ghi@gmail.com'
+                },
+                {
+                    roll: 4,
+                    name: 'Jkl',
+                    mobile: 8907654321,
+                    email: 'jkl@gmail.com'
+                },
+                {
+                    roll: 5,
+                    name: 'Mno',
+                    mobile: 3241567890,
+                    email: 'mno@gmail.com'
+                },
+                {
+                    roll: 6,
+                    name: 'Pqr',
+                    mobile: 9753124680,
+                    email: 'pqr@gmail.com'
+                },
+                {
+                    roll: 7,
+                    name: 'Stu',
+                    mobile: 8642135790,
+                    email: 'stu@gmail.com'
+                },
+                {
+                    roll: 8,
+                    name: 'Vwx',
+                    mobile: 9807654321,
+                    email: 'vwx@gmail.com'
+                },
+                {
+                    roll: 9,
+                    name: 'Yza',
+                    mobile: 9123456789,
+                    email: 'Yza@gmail.com'
+                },
+                {
+                    roll: 10,
+                    name: 'Bcd',
+                    mobile: 8790654321,
+                    email: 'bcd@gmail.com'
+                }
+            ];
+            var studentRows = [];
+            for (var i = 0; i < students.length; i++) {
+                var student = students[i];
+                var row = '<tr>' +
+                    '<td>' + student.roll + '</td>' +
+                    '<td>' + student.name + '</td>' +
+                    '<td>' + student.mobile + '</td>' +
+                    '<td>' + student.email + '</td>' +
+                    '</tr>';
+                studentRows.push(row);
+            }
+            document.write(studentRows.join(''));
+        </script>
+    </table>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</body>
+</html>

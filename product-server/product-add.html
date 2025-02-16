@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form id="productForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+        <br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+        <br>
+        <input type="submit" value="Add Product">
+    </form>
+    <a href="product-list.html">Back to List</a>
+    
+    <h2>Delete Product</h2>
+    <form id="deleteProductForm">
+        <label for="productId">Product ID:</label>
+        <input type="text" name="productId" id="productId" required>
+        <br>
+        <input type="submit" value="Delete Product">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+            const description = document.getElementById('description').value;
+
+            const product = {
+                name: name,
+                price: price,
+                description: description
+            };
+
+            axios.post('http://localhost:3000/products', product)
+                .then(response => {
+                    console.log('Product added:', response.data);
+                    alert('Product added successfully!');
+                })
+                .catch(error => {
+                    console.error('There was an error adding the product!', error);
+                });
+
+            document.getElementById('productForm').reset();
+        });
+
+        document.getElementById('deleteProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const productId = document.getElementById('productId').value;
+
+            axios.delete(`http://localhost:3000/products/${productId}`)
+                .then(response => {
+                    console.log('Product deleted:', response.data);
+                    alert('Product deleted successfully!');
+                })
+                .catch(error => {
+                    console.error('There was an error deleting the product!', error);
+                });
+
+            document.getElementById('deleteProductForm').reset();
+        });
+    </script>
+</body>
+</html>

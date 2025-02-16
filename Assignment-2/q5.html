@@ -1,0 +1,56 @@
+<!-- Create an JS array of color names. In HTML create a div with fixed height and width.
+Also, create buttons based on array elements. If any button is clicked, the background
+color of the div should change to the corresponding color. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        #color {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Change Background Color</h2>
+    <div id="color"></div>
+    <div class="button-container"></div>
+    <script>
+        let colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black'];
+        let colorDiv = document.querySelector('#color');
+        let buttonContainer = document.querySelector('.button-container');
+        colors.forEach(color => {
+            let button = document.createElement('button');
+            button.innerText = color;
+            button.style.backgroundColor = color;
+            button.addEventListener('click', () => {
+                colorDiv.style.backgroundColor = color;
+            });
+            buttonContainer.appendChild(button);
+        });
+    </script>
+</body>
+</html>

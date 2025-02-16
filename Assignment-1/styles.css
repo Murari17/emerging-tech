@@ -1,0 +1,358 @@
+/* Murari Prasad Samal, CSE-D2, Roll No-11 */
+.hero-section {
+  display: flex;
+}
+.hero-text {
+  flex: 1;
+  background-color: #000026;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-text .btn {
+  margin-right: 10px;
+}
+.hero-image {
+  flex: 1;
+}
+.hero-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.statistics-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+.statistics-section h2 {
+  text-decoration: underline #055981;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.statistics-section p {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.stat-card {
+  text-align: center;
+  padding: 10px;
+}
+.stat-card h3 {
+  color: #18b1f7;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.stat-card img {
+  margin-bottom: 10px;
+}
+.featured-program .row {
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.featured-program .card {
+  border-radius: 5px;
+}
+.featured-program .card-title {
+  text-align: center;
+  font-weight: bold;
+}
+.featured-program {
+  background-image: url("./images/background-1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: white;
+  position: relative;
+}
+.featured-program::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.featured-program > .container {
+  position: relative;
+  z-index: 1;
+}
+.featured-program h2 {
+  text-decoration: underline #055981;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.featured-program p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.featured-program .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.info-section {
+  display: flex;
+}
+.info-text {
+  flex: 1;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.info-text h1 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.info-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.info-text .btn {
+  margin-right: 10px;
+  border: solid #000026;
+  font-weight: bold;
+}
+.info-image {
+  flex: 1;
+}
+.info-image img {
+  padding-top: 10%;
+  padding-left: 30%;
+  max-height: 80%;
+  max-width: 90%;
+  object-fit: contain;
+}
+.trust-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+.trust-section h2 {
+  text-decoration: underline #055981;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-head {
+  font-size: 45px;
+  font-weight: 500;
+  padding: 53px 0px 8.5px 0px;
+  border-bottom: 2px solid #0b108f;
+}
+.gallery-text {
+  padding-top: 20px;
+  padding-bottom: 61px;
+}
+.gallery-images {
+  overflow: hidden;
+  display: flex;
+}
+.galler-photo {
+  overflow: hidden;
+  width: 24.739vw;
+  height: 35vh;
+  object-fit: fill;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.team-head {
+  font-size: 45px;
+  font-weight: 500;
+  padding: 53px 0px 8.5px 0px;
+  border-bottom: 2px solid #0b108f;
+}
+.team-detail {
+  display: flex;
+  padding: 54px;
+  gap: 80px;
+}
+.team-image {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 8px;
+}
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.memname {
+  color: #0ab1ff;
+  font-size: 25px;
+  font-weight: 600;
+}
+.fiels {
+  font-size: 17px;
+}
+.query {
+  display: flex;
+}
+.query img {
+  margin-top: 7vh;
+  width: 50vw;
+  height: 94vh;
+}
+.feedback {
+  background-color: #000026;
+  width: 50vw;
+  margin-top: 7vh;
+  display: flex;
+  flex-direction: column;
+}
+.feedtext {
+  color: white;
+  font-size: 47px;
+  font-weight: 600;
+  padding-bottom: 4.5vh;
+}
+.ph {
+  color: white;
+}
+.nameip {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 36vw;
+  height: 5vh;
+}
+.nameipp {
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 36vw;
+  height: 22.5vh;
+}
+form {
+  margin: auto;
+}
+form button {
+  width: 8vw;
+  height: 5vh;
+  color: white;
+  background-color: #238efa;
+  border: none;
+  border-radius: 3px;
+}
+.last {
+  display: flex;
+  gap: 20px;
+  padding: 5vw;
+  align-items: flex-start;
+}
+.contact,
+.news {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+}
+.c1,
+.n1 {
+  font-size: 1.8em;
+  font-weight: 500;
+  text-decoration: underline #055981;
+  margin-bottom: 15px;
+}
+.c2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.c2-2,
+.n2-2 {
+  font-size: 1rem;
+}
+.c5 {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+#im {
+  width: 1.5vw;
+}
+#social {
+  width: 2vw;
+  background-color: #e0e0e0;
+  padding: 0.5vw;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#social:hover {
+  background-color: #d0d0d0;
+}
+.news input {
+  width: calc(100% - 2.5vw);
+  height: 5vh;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  outline: none;
+}
+.news .container {
+  display: flex;
+  margin-top: 10px;
+  padding-left: 0;
+}
+.box {
+  background-image: url("./images/bell.png");
+  background-color: #0a427a;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2.5vw;
+  height: 5vh;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+}
+.box:hover {
+  background-color: #08365e;
+}
+.maps {
+  padding-left: 0px;
+  flex: 1;
+  height: 30vh;
+}
+.maps iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+footer {
+  background-color: #074381;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container {
+  padding-left: 0%;
+  text-align: center;
+}

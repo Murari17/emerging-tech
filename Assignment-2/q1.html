@@ -1,0 +1,22 @@
+<!-- In an HTML page display a text “You have clicked the button 0 times.” and a button
+with a text “Click”. As many times the button is clicked the count value on the text
+should update. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asg2-q1</title>
+</head>
+<body>
+    <h2>You have clicked the button 0 times.</h2>
+    <button onclick="clickCount()">Click</button>
+    <script>
+        let count = 0;
+        function clickCount() {
+            count++;
+            document.querySelector('h2').innerHTML = `You have clicked the button ${count} times.`;
+        }
+    </script>
+</body>
+</html>

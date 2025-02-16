@@ -1,0 +1,65 @@
+<!-- Design an HTML page to accept the working experience of an employee having fields
+– Organization, Designation, and Duration. Create a button with the text “Add More”.
+Each time the button is clicked one more row should be added with all three fields.
+Create a submit button and once clicked log the data in console, provided in the form
+in the array of objects format, with each object representing a row of data.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>asg2-q4</title>
+    </head>
+    <body>
+        <form id="form">
+            <input
+                type="text"
+                id="organization"
+                placeholder="Organization"
+            />
+            <input type="text" id="designation" placeholder="Designation" />
+            <input type="text" id="duration" placeholder="Duration" />
+            <button type="button" onclick="addRow()">Add More</button>
+            <button type="submit">Submit</button>
+        </form>
+        <table id="table">
+            <tr>
+                <th>Organization</th>
+                <th>Designation</th>
+                <th>Duration</th>
+            </tr>
+        </table>
+        <script>
+                let form = document.querySelector("#form");
+                let table = document.querySelector("#table");
+                let data = [];
+                function addRow() {
+                        let organization = document.querySelector("#organization").value;
+                        let designation = document.querySelector("#designation").value;
+                        let duration = document.querySelector("#duration").value;
+                        if (organization && designation && duration) {
+                                let tr = document.createElement("tr");
+                                tr.innerHTML = `
+                                        <td>${organization}</td>
+                                        <td>${designation}</td>
+                                        <td>${duration}</td>
+                                `;
+                                table.appendChild(tr);
+                                data.push({
+                                        organization: organization,
+                                        designation: designation,
+                                        duration: duration,
+                                });
+                                document.querySelector("#organization").value = "";
+                                document.querySelector("#designation").value = "";
+                                document.querySelector("#duration").value = "";
+                        }
+                }
+                form.addEventListener("submit", (e) => {
+                        e.preventDefault();
+                        console.log(data);
+                });
+        </script>
+    </body>
+</html>
